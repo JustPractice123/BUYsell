@@ -1,0 +1,17 @@
+package com.example.BUYsell.Models.enums;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.Getter;
+import org.springframework.security.core.GrantedAuthority;
+
+
+public enum Role implements GrantedAuthority {
+    ROLE_USER, ROLE_ADMIN;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
+}

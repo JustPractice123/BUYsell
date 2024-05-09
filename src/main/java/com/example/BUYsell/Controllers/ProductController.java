@@ -23,9 +23,8 @@ public class ProductController {
         return "products";
     }
     @PostMapping("/product/create")
-    public String addProduct(@RequestParam("file1") MultipartFile file1,@RequestParam("file2") MultipartFile file2,
-                             @RequestParam("file3") MultipartFile file3,Product product) throws IOException {
-        productService.saveProdusct(product, file1, file2, file3);
+    public String addProduct(@RequestParam("file1") MultipartFile file,Product product) throws IOException {
+        productService.saveProdusct(product, file);
         return "redirect:/";
     }
     @PostMapping("product/delete/{id}")
@@ -36,7 +35,7 @@ public class ProductController {
     @GetMapping("product/{id}")
     public String productInfo(Model model, @PathVariable Long id){
         model.addAttribute("product", productService.getProductById(id));
-        model.addAttribute("images", productService.getProductById(id).getImages());
+        model.addAttribute("images", productService.getProductById(id).getImage());
         return "/productInfo";
     }
 }

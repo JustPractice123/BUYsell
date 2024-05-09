@@ -26,8 +26,6 @@
     Город: <input type="text" name="city"><br>
     Автор: <input type="text" name="author"><br>
     Первая фотография: <input type="file" name="file1"><br>
-    Вторая фотография: <input type="file" name="file2"><br>
-    Третья фотография: <input type="file" name="file3"><br>
     <input type="submit" value="Добавить товар">
 </form>
 </body>
